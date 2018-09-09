@@ -1,9 +1,9 @@
 //  this is running gulp 4.0 
-// you need to run npm i -g gulp-cli to update your gulp version
-
+// previous version needs to be removed
+// globol and local update needed.
 
 "use strict";
-
+// variables
 let gulp = require("gulp"),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
@@ -28,6 +28,7 @@ gulp.task("images", gulp.series(compress));
 //clean dist file
 gulp.task('clean', gulp.series(clean));
 
+// build js , styles images and copy
 gulp.task('build', gulp.series('clean', gulp.parallel('scripts', 'styles', 'images', copy)));
 
 //watch
@@ -35,6 +36,7 @@ gulp.task('watch', gulp.series(watchSass));
 
 // gulp.task('default',  gulp.parallel(watchSass, server, concatMin, sassMin, compress, copy));
 gulp.task('default',  gulp.series('build', gulp.parallel('watch', server)));
+
 // delete dist file
 function clean(){
    return(del([
@@ -54,10 +56,10 @@ function concatMin (){
     .pipe(uglify())
     .pipe(maps.write("./"))
     .pipe(gulp.dest("dist/scripts"))
-8
+
 }
 
-// function scss to css, minify and sourcemaps
+//  scss to css, minify and sourcemaps
 function sassMin(){
    return gulp.src("sass/global.scss")
     .pipe(maps.init())
@@ -74,6 +76,7 @@ function compress(){
         .pipe(imagemin())
         .pipe(gulp.dest("dist/content"))
 }
+
 // watch sscss
 function watchSass(){
     gulp.watch ('sass/**/*.scss', gulp.series('styles', reload))
@@ -87,6 +90,8 @@ function server(){
         port: 3000
       });
 }
+
+//copy
 function copy(){
     return gulp.src([
         "index.html",
@@ -95,6 +100,7 @@ function copy(){
     .pipe(gulp.dest("dist"))
 }
 
+//reload server
 function reload(){
  return  gulp.src('index.html')
    .pipe(connect.reload())
