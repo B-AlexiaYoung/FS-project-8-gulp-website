@@ -1,0 +1,34 @@
+{
+  "name": "fs-project-8-gulp",
+  "version": "1.0.0",
+  "description": "a website project using gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B-AlexiaYoung/FS-project-8-gulp-website.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/B-AlexiaYoung/FS-project-8-gulp-website/issues"
+  },
+  "homepage": "https://github.com/B-AlexiaYoung/FS-project-8-gulp-website#readme",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.6.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "http-server": "^0.11.1",
+    "install": "^0.12.1",
+    "uglify": "^0.1.5"
+  },
+  "dependencies": {}
+}
