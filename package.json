@@ -30,5 +30,7 @@
     "install": "^0.12.1",
     "uglify": "^0.1.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
 }
