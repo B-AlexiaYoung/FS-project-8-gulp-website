@@ -100,6 +100,7 @@ function copy(){
     .pipe(gulp.dest("dist"))
 }
 
+
 //reload server
 function reload(){
  return  gulp.src('index.html')
